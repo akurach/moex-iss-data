@@ -2,6 +2,7 @@
 # Copyright (c) 2026 Alexander Kurach. See ../LICENSE.
 """Offline regression checks for pagination and failure semantics."""
 import unittest
+from io import BytesIO
 from urllib.error import HTTPError
 from urllib.parse import parse_qs, urlsplit
 from unittest.mock import patch
@@ -71,21 +72,21 @@ class IssTests(unittest.TestCase):
         self.assertIsNone(result["paging"]["complete"])
 
     def test_transient_failure_stops_after_two_attempts(self):
-        error = HTTPError("https://iss.moex.com/iss/test.json", 503, "Unavailable", {}, None)
+        error = HTTPError("https://iss.moex.com/iss/test.json", 503, "Unavailable", {}, BytesIO())
         with patch("iss_get.urlopen", side_effect=error) as request, patch("iss_get.time.sleep"):
             with self.assertRaisesRegex(ValueError, "HTTP 503"):
                 fetch(error.url, 1)
         self.assertEqual(request.call_count, 2)
 
     def test_forbidden_is_not_retried(self):
-        error = HTTPError("https://iss.moex.com/iss/test.json", 403, "Forbidden", {}, None)
+        error = HTTPError("https://iss.moex.com/iss/test.json", 403, "Forbidden", {}, BytesIO())
         with patch("iss_get.urlopen", side_effect=error) as request:
             with self.assertRaisesRegex(ValueError, "HTTP 403"):
                 fetch(error.url, 1)
         self.assertEqual(request.call_count, 1)
 
     def test_long_retry_after_is_reported_without_early_retry(self):
-        error = HTTPError("https://iss.moex.com/iss/test.json", 429, "Limited", {"Retry-After": "120"}, None)
+        error = HTTPError("https://iss.moex.com/iss/test.json", 429, "Limited", {"Retry-After": "120"}, BytesIO())
         with patch("iss_get.urlopen", side_effect=error) as request, patch("iss_get.time.sleep") as sleep:
             with self.assertRaisesRegex(ValueError, "Retry-After=120"):
                 fetch(error.url, 1)
