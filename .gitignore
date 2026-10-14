@@ -1,0 +1,114 @@
+# ============================================================
+# Baseline .gitignore — seeded by Codex when initializing a project.
+# Covers junk no project should ever commit. Append project-specific
+# language/framework rules below the marker at the bottom.
+# ============================================================
+
+# --- AI assistant artifacts (Codex + retained Claude coexistence) ---
+.codex/
+AGENTS.md
+AGENTS.override.md
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.claude.json
+.aider*
+.cursor/
+.continue/
+.windsurfrules
+
+# --- scratch / raw inputs ---
+raw/
+
+# --- OS junk ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# --- Editors / IDEs ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+.netrwhist
+
+# --- Secrets / env ---
+.env
+.env.*
+!.env.example
+!.env.sample
+.envrc
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets.*
+credentials.json
+service-account*.json
+
+# --- Dependencies ---
+node_modules/
+bower_components/
+vendor/
+.pnp.*
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.tox/
+*.egg-info/
+.eggs/
+
+# --- Build / output ---
+dist/
+build/
+out/
+target/
+bin/
+obj/
+.next/
+.nuxt/
+.svelte-kit/
+.turbo/
+.parcel-cache/
+.cache/
+coverage/
+.gradle/
+Pods/
+.dart_tool/
+
+# --- Logs / temp / runtime ---
+*.log
+logs/
+*.pid
+*.seed
+tmp/
+temp/
+*.tmp
+
+# --- Data / backups ---
+*.sqlite
+*.db
+*.dump
+*.bak
+backups/
+
+# --- Lockfiles: keep them committed (do NOT ignore) ---
+# package-lock.json / yarn.lock / go.sum / Cargo.lock stay tracked.
+
+# --- project-specific rules below this line ---
+
+# Local ISS responses and exports
+/exports/
+/.pytest_cache/
+/.ruff_cache/
