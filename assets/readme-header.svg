@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-labelledby="moex-iss-title moex-iss-desc">
+  <title id="moex-iss-title">MOEX ISS DATA</title>
+  <desc id="moex-iss-desc">Инструмент для AI-агентов: котировки, история и свечи Московской биржи.</desc>
+  <defs>
+    <linearGradient id="moex-iss-surface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111c2b"/>
+      <stop offset="1" stop-color="#0a111b"/>
+    </linearGradient>
+    <linearGradient id="moex-iss-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58d4d0"/>
+      <stop offset="1" stop-color="#75b9ff"/>
+    </linearGradient>
+    <clipPath id="moex-iss-right-clip">
+      <rect x="818" y="40" width="382" height="240" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1280" height="320" fill="url(#moex-iss-surface)"/>
+  <rect x="0" width="8" height="320" fill="url(#moex-iss-accent)"/>
+  <path d="M8 271H1280" stroke="#ffffff" stroke-opacity=".07"/>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Arial, sans-serif">
+    <text x="80" y="91" fill="#70d5d1" font-size="15" font-weight="700" letter-spacing="2.1">ДАННЫЕ ДЛЯ AI-АГЕНТОВ</text>
+    <text x="80" y="154" fill="#f4f8fc" font-size="48" font-weight="750" letter-spacing="-1.6">MOEX ISS DATA</text>
+    <text x="80" y="198" fill="#b8c6d6" font-size="24" font-weight="450" letter-spacing="-.25">Московская биржа для AI-агентов</text>
+
+    <rect x="80" y="228" width="403" height="1" fill="#ffffff" fill-opacity=".12"/>
+    <text x="80" y="259" fill="#d9e4ee" font-size="17" font-weight="520">Котировки</text>
+    <circle cx="177" cy="253" r="3" fill="#58d4d0"/>
+    <text x="193" y="259" fill="#d9e4ee" font-size="17" font-weight="520">История</text>
+    <circle cx="276" cy="253" r="3" fill="#58d4d0"/>
+    <text x="292" y="259" fill="#d9e4ee" font-size="17" font-weight="520">Свечи</text>
+  </g>
+
+  <g clip-path="url(#moex-iss-right-clip)" fill="none">
+    <rect x="818" y="40" width="382" height="240" rx="10" fill="#0e1926" stroke="#ffffff" stroke-opacity=".14"/>
+    <path d="M818 88H1200M818 136H1200M818 184H1200M818 232H1200" stroke="#ffffff" stroke-opacity=".07"/>
+    <path d="M914 40V280M1010 40V280M1106 40V280" stroke="#ffffff" stroke-opacity=".07"/>
+    <path d="M842 112H944M842 160H1054M842 208H984" stroke="#b9c8d8" stroke-opacity=".42" stroke-width="2"/>
+    <path d="M842 124H906M842 172H1006M842 220H956" stroke="#6d8195" stroke-opacity=".45" stroke-width="2"/>
+    <path d="M1042 111H1163M1081 159H1163M1010 207H1163" stroke="#b9c8d8" stroke-opacity=".42" stroke-width="2"/>
+    <path d="M1090 123H1163M1054 171H1163M1068 219H1163" stroke="#6d8195" stroke-opacity=".45" stroke-width="2"/>
+    <rect x="993" y="96" width="12" height="32" rx="2" fill="#58d4d0" fill-opacity=".9"/>
+    <rect x="1020" y="144" width="12" height="32" rx="2" fill="#75b9ff" fill-opacity=".9"/>
+    <rect x="993" y="192" width="12" height="32" rx="2" fill="#58d4d0" fill-opacity=".9"/>
+    <circle cx="999" cy="112" r="21" stroke="#58d4d0" stroke-opacity=".35"/>
+    <circle cx="1026" cy="160" r="21" stroke="#75b9ff" stroke-opacity=".28"/>
+    <circle cx="999" cy="208" r="21" stroke="#58d4d0" stroke-opacity=".25"/>
+  </g>
+  <text x="1171" y="305" text-anchor="end" fill="#6f8498" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Arial, sans-serif" font-size="12" font-weight="650" letter-spacing="1.5">ISS API</text>
+</svg>
